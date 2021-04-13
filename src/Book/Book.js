@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, {useState, useEffect} from 'react'
+import Card from 'react-bootstrap/Card'
 
 
 const Book = () =>{
@@ -24,15 +25,29 @@ const Book = () =>{
     return(
         <>
         <div>
-            <ul>
-            {articles.map((book)=>{
-                return(
-                <>
+            <div class="container">
+                <div class="row">
+                {articles.map((book)=>{
+                    return(
+                        <div class="col-sm">
+
+                            <Card style={{ width: '18rem' }}>
+                                <Card.Img variant="top" src={book.book_image} />
+                                    <Card.Body>
+                                        <Card.Title>{book.title}</Card.Title>
+                                            <Card.Text>
+                                            <p><strong>Author:</strong></p>
+                                            {book.author}
+                                            <p><strong>Description:</strong></p>
+                                            {book.description}
+                                            </Card.Text>
+                                    </Card.Body>
+                            </Card> 
+                        </div>
                 
-                <li>{book.author}</li>
-                </>)
-            })}
-            </ul>
+                        )})}
+                </div>
+            </div>
         </div>
         </>
     )

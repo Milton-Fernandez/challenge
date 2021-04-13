@@ -7,8 +7,9 @@ function App() {
     <div className="App">
       <center>
         <h1> Bestsellers</h1>
-        <Book />
       </center>
+        <Book />
+  
       
 
     </div>
